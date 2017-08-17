@@ -1,0 +1,46 @@
+.container { 
+  width: 1600px;
+  height: 1000px;
+  float: left;
+  display:flex;
+  background-color: whitesmoke;
+  justify-content: center;
+  
+}
+.container div{
+    width:200px;
+    height:200px;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    margin: 5px;
+}
+
+ figure {
+  margin: 0;
+ 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+ .front {
+  background: red;
+}
+ .back {
+  background-color: blue;
+  transform: rotateY( 180deg );
+}
+
+.flipped {
+  transform: rotateY( 180deg );
+}
+.victoire{
+    display:none;
+    position:relative;
+}
+.defeat{
+    position:relative;
+    display:none;
+}
+ 
