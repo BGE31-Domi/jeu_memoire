@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 65%;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    border: 1px solid;
+    margin: 0 ;
+    font-size: 1.6rem;
+}
+
+main{
+    border: solid black 1px;
+    width: 100%;
+    background-color:  bisque;
+    padding: 1em;
+    font-family: calibri;
+}
+/***********************************************************************************/
+
+header{
+    width: 100%;
+    max-width: 100%;
+    border: black solid 1px;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    max-width:2000px;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center;
+    padding: 1%;
+    
+}
+.logo{
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 20px;
+}
+
+.logoSon{
+    width: 100px;
+    height: 100px;   
+}
+.logoConnex{
+    width: 90px;
+    height: 90px;    
+}
+
+/*************************************************************************************/
+h1, h3{
+   font-family:Patrick Hand SC; 
+
+}
+.centre{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    max-width:2000px;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center; 
+    padding: 1%;
+}
+.solo{
+    
+}
+.duel{
+    
+}
+.scoreSolo{
+    
+}
+.scoreDuel{
+    
+}
+.container{
+    width: 60%;
+    height: 500px;
+    border: black solid 1px;
+    min-width: 200px;
+    margin: 1%;
+}
+/*************************************************************/
+.partenaires{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    max-width:2000px;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center; 
+    padding: 2%;
+    border: black solid 1px;
+
+}
+.bge{
+    width: 100px;
+}
+.region{
+    width: 100px;
+}
+.iot{
+    width: 100px;
+}
