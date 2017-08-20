@@ -1,6 +1,6 @@
 /* Projet jeu de mémoire.
 Partie Javascript
-Equipe : 
+Equipe :
 - Thomas
 - Victoria
 - Dominique
@@ -17,17 +17,21 @@ var card;
 var nb_cartes = 8;
 //Tableau des valeurs initiales de toutes les cartes.
 var tab_init = [];
-//Tableau qui enregistre les valeurs des cartes sur lesquelles on clique : 
+//Tableau qui enregistre les valeurs des cartes sur lesquelles on clique :
 var card_val = [];
 //Tableau qui enregistre les pointages des div des cartes sur lesquelles on clique :
 var card_div = [];
 //Compteur de comparaison des cartes :
 var cpt = 0;
-//Valeur de la carte sur laquelle on clique : 
+//Valeur de la carte sur laquelle on clique :
 var value;
-//Compteur de paires : 
+//Compteur de paires :
 var cpt_fin = 0;
-//Timer de jeu : 
+//Timer de jeu :
+//temps de chaque manche :
+var temps_manche = 30;
+//temps qui varie
+var timer_gene = temps_manche;
 var timer_id;
 //Numéro de niveau :
 var level = 1;
@@ -38,6 +42,7 @@ var defeat;
 //Va récupèrer le pointage de la div fin
 var fin;
 
+var empl_timer = document.querySelector('.timer');
 
 
 //Révèle toutes les cartes en début de niveau.
@@ -51,19 +56,15 @@ function revel_card_init() {
 
 //Cache toutes les cartes en début de niveau, après les avoir révélées et les rends cliquables.
 function hide_card_init() {
-    
+
     for (i = 0; i < nb_cartes; i++) {
-        //Retourner les cartes : 
+        //Retourner les cartes :
         card = document.getElementById("card" + i);
         card.classList.remove("flipped");
 
-        //attribution de la fonctionnalité clic : 
-        //pointer la carte à modifier par l'id : 
-        let div_carte = document.getElementById("card" + i);
+        //attribution de la fonctionnalité clic :
+        card.setAttribute("onclick", "flip(this.id,this.value);");
 
-        // lui attribuer l'attribut onclick
-        div_carte.setAttribute("onclick", "flip(this.id,this.value);");
-       
     }
 
     //démarrage du temps de jeu :
@@ -73,10 +74,10 @@ function hide_card_init() {
 
 //Affiche la div victoire lorsque toutes les paires ont été trouvées.
 function popup() {
-   
+
     victoria = document.querySelector(".victoire");
     victoria.style.display = "inline-block";
-    document.querySelector(".temps").innerHTML = "Bravo vous avez terminé le niveau " + level + ".<br> Vous gagnez " + (timer_gene + 1) + " s pour le niveau suivant.";
+    document.querySelector(".temps").innerHTML = "Bravo vous avez terminé le niveau " + level + ".<br> Vous gagnez " + (timer_gene) + " s pour le niveau suivant.";
 
 }
 
@@ -102,64 +103,53 @@ function flip(card, value) {
     //On change la class css de la carte pointée:
     card.className = "flipped";
 
-    //on incrémente le compteur de carte cliquées : 
+    //on incrémente le compteur de carte cliquées :
     cpt++;
 
     //vérification si on clique sur la 1ère ou la 2ème carte
 
-//cas où 1 seule carte est cliquée : 
+//cas où 1 seule carte est cliquée :
     if (cpt === 1) {
         //On enlève l'attribut cliquable de la carte :
         card.removeAttribute("onclick");
 
-//Cas où 2 cartes sont retournées : on vérifie si elles sont les mêmes ou non    
+//Cas où 2 cartes sont retournées : on vérifie si elles sont les mêmes ou non
     } else if (cpt === 2) {
 
-        // On met toutes les cartes en non cliquable : 
+        // On met toutes les cartes en non cliquable :
         for (i = 0; i < nb_cartes; i++) {
-            //pointer la carte à modifier par l'id : 
+            //pointer la carte à modifier par l'id :
             let div_carte = document.getElementById("card" + i);
 
-            // lui enlever l'attribut onclick : 
+            // lui enlever l'attribut onclick :
             div_carte.removeAttribute("onclick");
         }
 
-//On compare les deux cartes : 
+//On compare les deux cartes :
 
-        //Les 2 cartes sont les mêmes : 
+        //Les 2 cartes sont les mêmes :
         if (card_val[0] === card_val[1]) {
-            //Le compteur de paires augmente de 1 : 
+            //Le compteur de paires augmente de 1 :
             cpt_fin++;
 
-            //re-attribution de la fonctionnalité clic : 
             for (i = 0; i < nb_cartes; i++) {
 
-                //pointer la carte à modifier par l'id : 
+                //pointer la carte à modifier par l'id :
                 let div_carte = document.getElementById("card" + i);
-
-                // lui attribuer un attribut
-                div_carte.setAttribute("onclick", "flip(this.id,this.value);");
-
-            }
-            //on elève le clic sur les cartes "flipped"
-            for (i = 0; i < nb_cartes; i++) {
-                let card_pour_class = document.getElementById("card" + i);
-                //on regarde si la carte a une class=flipped :
-                if (card_pour_class.className === "flipped") {
-
-//                  // lui enlever l'attribut onclick : 
-                    card_pour_class.removeAttribute("onclick");
+                if (div_carte.className !== "flipped"){
+                  // lui attribuer un attribut
+                  div_carte.setAttribute("onclick", "flip(this.id,this.value);");
                 }
 
             }
 
-            //Si toutes les paires sont faites : 
+            //Si toutes les paires sont faites :
             if (cpt_fin === nb_cartes / 2) {
-                //On met le compteur en pause : 
+                //On met le compteur en pause :
                 clearInterval(timer_id);
 
 
-                //On affiche un message de victoire : 
+                //On affiche un message de victoire :
 
                 if (level === 7) {
                     setTimeout(popup_end, 1500);
@@ -171,7 +161,7 @@ function flip(card, value) {
 
         } else {
 
-            //On retourne les 2 cartes : 
+            //On retourne les 2 cartes :
             setTimeout(flip2, 1000);
 
         }
@@ -192,10 +182,10 @@ function flip2() {
         card.setAttribute("onclick", "flip(this.id,this.value);");
     }
 
-    //re-attribution de la fonctionnalité clic : 
+    //re-attribution de la fonctionnalité clic :
     for (i = 0; i < nb_cartes; i++) {
 
-        //pointer la carte à modifier par l'id : 
+        //pointer la carte à modifier par l'id :
         let div_carte = document.getElementById("card" + i);
 
         // lui attribuer un attribut
@@ -217,7 +207,7 @@ function cardsCreation() {
         k++;
 
     }
-    
+
 //melange du tableau initial
     for (var j, k, i = tab_init.length; i > 0; ) {
         j = Math.floor(Math.random() * i);
@@ -241,8 +231,8 @@ function cardsCreation() {
         //Les faces sont placées sur les cartes
         newDiv.appendChild(fig);
         newDiv.appendChild(fig2);
-        
-        //Ajout des visuels des cartes : 
+
+        //Ajout des visuels des cartes :
         var source = "url(img/motif" + tab_init[i] + ".png)";
         var source2 = "url(img/dos.png)";
         fig2.style.backgroundImage = source;
@@ -253,18 +243,19 @@ function cardsCreation() {
         fig2.className = "back";
         newDiv.value = tab_init[i];
     }
+     empl_timer.innerHTML = "Temps restant :  -  min - s <br>Niveau : " + level;
     //Révélation des cartes en début de partie
     revel_card_init();
     //Retournement des cartes
     setTimeout(hide_card_init, 5000);
 
-    //Gestion des clics sur les boutons : 
+    //Gestion des clics sur les boutons :
     document.addEventListener('DOMContentLoaded', function () {
         //Bouton "niveau suivant" dans "victoria"
-        cible = document.querySelector("input[name='nxt']");
+        var cible = document.querySelector("input[name='nxt']");
         cible.addEventListener("click", function () {
             cpt_fin = 0;
-            timer_gene = timer_gene + 30;
+            timer_gene = timer_gene + temps_manche;
             level++;
             nb_cartes = nb_cartes + 2;
             ctnr.innerHTML = "";
@@ -272,12 +263,12 @@ function cardsCreation() {
             cardsCreation();
         });
         //Bouton "recommencer" dans "victoria"
-        cible2 = document.querySelector("input[name='reset']");
+        var cible2 = document.querySelector("input[name='reset']");
         cible2.addEventListener("click", function () {
             tab_init = [];
             nb_cartes = 8;
             cpt_fin = 0;
-            timer_gene = 30;
+            timer_gene = temps_manche;
             level = 1;
             ctnr.innerHTML = "";
             victoria.style.display = "none";
@@ -285,26 +276,26 @@ function cardsCreation() {
 
         });
         //Bouton "recommencer" dans "defeat"
-        cible3 = document.querySelector("input[name='reset2']");
+        var cible3 = document.querySelector("input[name='reset2']");
         cible3.addEventListener("click", function () {
             tab_init = [];
             nb_cartes = 8;
             cpt_fin = 0;
-            timer_gene = 30;
+            timer_gene = temps_manche;
             level = 1;
             ctnr.innerHTML = "";
             defeat = document.querySelector(".defeat");
             defeat.style.display = "none";
             cardsCreation();
-            
+
         });
         //Bouton "recommencer" dans "fin" de la partie
-        cible4 = document.querySelector("input[name='reset3']");
+        var cible4 = document.querySelector("input[name='reset3']");
         cible4.addEventListener("click", function () {
             tab_init = [];
             nb_cartes = 8;
             cpt_fin = 0;
-            timer_gene = 30;
+            timer_gene = temps_manche;
             level = 1;
             ctnr.innerHTML = "";
             fin.style.display = "none";
@@ -315,7 +306,3 @@ function cardsCreation() {
 }
 //Lance la fonction suivante au chargement de la page.
 cardsCreation();
-
-
-
-
