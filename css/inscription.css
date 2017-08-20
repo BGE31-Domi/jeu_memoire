@@ -10,15 +10,15 @@ input{
 }
 
 input[type=button],li{
-  background-color: rgbd(140,190,210);
+  background-color: rgb(140,190,210);
   border: 1px solid grey;
   box-shadow:  0 0 12px rgba(0,0,0,0.75);
   border-radius:6px;
   transition: 0.25s;
 
 }
-input[type=button]hover,li:hover{
-background-color: rgbd(180,230,250);
+input[type=button]:hover,li:hover{
+background-color: rgb(180,230,250);
 }
 h1{
   text-align: center;
