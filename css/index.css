@@ -1,0 +1,359 @@
+ 
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 65%;
+    display: flex; flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1em;
+    border: 1px solid;
+    margin: 0 ;
+    font-size: 1.6rem;
+}
+
+main{
+    border: solid black 1px;
+    width: 100%;
+    background-color:  bisque;
+    padding: 1em;
+    font-family: calibri;
+}
+@media screen and (min-width: 200px) and (max-width:640px){
+
+    html{
+        font-size: 45%;
+        letter-spacing: 1px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width:800px){
+    html{
+        font-size: 55%;
+    }
+}
+@media screen and (min-width: 800px) and (max-width:2000px){
+    p{
+    }
+    html{
+        font-size: 65%;
+    }
+}
+h1, h3{
+    font-family:Patrick Hand SC,calibri; 
+}
+p{
+    text-align:  justify;        
+}
+
+/*///////////////////////HEADER////////////////////////////////////////////////*/
+
+header{
+    width: 100%;
+    max-width: 100%;
+    border: black solid 1px;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    max-width:2000px;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center;
+    margin: 1%; 
+    padding: 1%;
+}
+@media screen and (min-width: 800px) and (max-width: 2000px){
+    header{
+        margin: 0px;
+    }
+    .partenaires{
+        margin: 0px;
+    }
+}
+/*LOGO*********************************************************************/
+@media screen and (min-width: 200px) and (max-width: 640px) {    
+    .logo {        
+        width:80px;     
+    } 
+} 
+@media screen and (min-width: 640px) and (max-width: 800px) {     
+    .logo { 
+        width:120px;     
+    } }
+
+@media screen and (min-width: 800px) and (max-width: 2000px){
+    .logo{
+        width: 160px;
+    }
+}
+/*LOGOSON***********************************************************/
+@media screen and (min-width: 20px) and (max-width:640px){
+    .logoSon{
+        width: 50px;
+    }     
+}
+@media screen and (min-width: 640px) and (max-width:800px){
+    .logoSon{
+        width: 80px;
+    }     
+}
+@media screen and (min-width: 800px) and (max-width:2000px){
+    .logoSon{
+        width: 100px;
+    }     
+}
+/*LOGOCONNEX***************************MEDIA QUERIES **********************************/
+@media screen and (min-width: 200px) and (max-width:640px){
+    .logoConnex{
+        width: 40px;
+    }     
+}
+@media screen and (min-width: 640px) and (max-width:800px){
+    .logoConnex{
+        width: 70px;
+    }     
+}
+@media screen and (min-width: 800px) and (max-width:2000px){
+    .logoConnex{
+        width: 70px;
+    }     
+}
+/*////////////////////////CENTRE//////////////////////////////////////////////**/
+
+.centre{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center; 
+
+}
+
+@media screen and (min-width: 900px) and (max-width:2000px){
+    .centre{
+        flex-wrap: nowrap;
+    }
+    .solo,.duel{
+        width: 15%;
+    }
+}     
+.solo,.duel{
+    border: black solid 1px;
+    margin: 1%; 
+    
+    padding: 1%;
+}
+.solo{
+}
+.duel{    
+}
+.scoreSolo,.scoreDuel{
+    border: black solid 1px; 
+    height: 20%;
+    margin-top: 2%;
+}
+
+/*******container**************************************/
+/*.container{
+    flex: 1;
+    border: black solid 1px;
+    min-width: 200px;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    padding: 1%;
+    margin-top: 3px;
+    width: auto;
+}*/
+
+@media screen and (min-width: 640px) and (max-width:800px){
+    .container{
+        order:-1;
+        flex-direction: column;
+    }
+    .solo,.duel{
+        width: auto;
+        flex-basis: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: auto;
+    }
+}
+@media screen and (min-width: 200px) and (max-width:640px){       
+    .solo,.duel{
+        width: 50%;
+        flex-basis: auto;
+        flex-direction: row;
+    }
+}
+@media(min-width: 200px) and (max-width:1200px){
+    .container{
+        flex-direction: column;
+        order:-1;
+    }
+    .solo,.duel,.container{
+        width: auto;
+        flex-basis: auto;
+    }
+}
+/*cartes*************************************************/
+/*.cart1,.cart2,.cart3,.cart4,.cart5,.cart6,.cart7,.cart8{
+    border: black solid 1px;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    border: black solid 1px;
+    width:70px;
+    height:70px;
+    margin:0 auto;
+    justify-content: space-around ;
+    display:inline-block;
+    align-items: center;
+    text-align: center;
+    margin: 2%;
+
+}*/
+
+@media screen and (min-width: 500px) and (max-width:1200px){
+    .cart1,.cart2,.cart3,.cart4,.cart5,.cart6,.cart7,.cart8{
+        width: 100px;
+        height: 100px;
+    } 
+}
+@media screen and (min-width: 1200px) and (max-width:2000px){
+/*    .cart1,.cart2,.cart3,.cart4,.cart5,.cart6,.cart7,.cart8{
+        width: 150px;
+        height: 150px;
+    }*/
+}
+
+/*************************************************************/
+.partenaires{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    max-width:2000px;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center; 
+    padding: 1%;
+
+    border: black solid 1px;
+
+}
+/*BGE*****************************************************/
+@media screen and (min-width: 200px) and (max-width:640px){
+    .bge{
+        width: 60px;
+    } 
+}
+@media screen and (min-width: 640px) and (max-width:800px){
+    .bge{
+        width: 90px;
+    }     
+}
+@media screen and (min-width: 800px) and (max-width:2000px){
+    .bge{
+        width: 100px;
+    }
+}
+/*iot*******************************************************/
+@media screen and (min-width: 200px) and (max-width:640px){
+    .iot{
+        width: 60px;
+    } 
+}
+@media screen and (min-width: 640px) and (max-width:800px){
+    .iot{
+        width: 90px;
+    }     
+}
+@media screen and (min-width: 800px) and (max-width:2000px){
+    .iot{
+        width: 100px;
+    }
+}
+/*region*******************************************************/
+@media screen and (min-width: 200px) and (max-width:640px){
+    .region{
+        width: 50px;
+    } 
+}
+@media screen and (min-width: 640px) and (max-width:800px){
+    .region{
+        width: 70px;
+    }     
+}
+@media screen and (min-width: 800px) and (max-width:2000px){
+    .region{
+        width: 90px;
+    }
+}
+footer{
+    display: flex;
+    padding: 1%;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    max-width:2000px;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center; 
+   
+
+}
+.foot{
+    display: flex;
+    padding: 1%;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex: 1 1 auto;  
+    flex-direction: row;
+    flex-flow: row wrap;
+    max-width:2000px;
+    margin:0 auto;
+    justify-content: space-around ;
+    align-items: center;
+    text-align: center; 
+    border: black solid 1px;
+    margin-top: 3%;
+}
+/*
+@media screen and (min-width: 200px) and (max-width:640px){
+    
+}
+@media screen and (min-width: 640px) and (max-width:800px){
+   
+}
+@media screen and (min-width: 800px) and (max-width:2000px){
+
+}     
+}*/

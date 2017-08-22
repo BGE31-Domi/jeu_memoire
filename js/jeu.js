@@ -1,13 +1,13 @@
 /* Projet jeu de mémoire.
-Partie Javascript
-Equipe :
-- Thomas
-- Victoria
-- Dominique
-- Zohal
-- Tabitha
-
-créé en août 2017.
+ Partie Javascript
+ Equipe :
+ - Thomas
+ - Victoria
+ - Dominique
+ - Zohal
+ - Tabitha
+ 
+ créé en août 2017.
  */
 
 
@@ -41,11 +41,50 @@ var victoria;
 var defeat;
 //Va récupèrer le pointage de la div fin
 var fin;
-
+var motif = "";
 var empl_timer = document.querySelector('.timer');
+var variante;
+var game;
+var debut;
+var ctnr=document.querySelector(".container");
 
+document.addEventListener('DOMContentLoaded', function () {
+    var debut = document.querySelector("input[value='Commencer']");
+    debut.addEventListener("click", function () {
+        cpt = 0;
+        tab_init = [];
+        nb_cartes = 8;
+        cpt_fin = 0;
+        timer_gene = temps_manche;
+        level = 1;
+        ctnr.innerHTML="";
+        clearInterval(timer_id);
+        game = document.querySelector("input[name='variante']:checked");
+        
+        
+        game_variant(game.value);
+        cardsCreation();
 
+    });
+});
 //Révèle toutes les cartes en début de niveau.
+function game_variant(x) {
+
+
+    switch (x) {
+        case "0":
+            motif = "motif";
+            break;
+        case "1":
+            motif = "champi";
+            break;
+
+
+
+    }
+    return motif;
+}
+
 function revel_card_init() {
     for (i = 0; i < nb_cartes; i++) {
         card = document.getElementById("card" + i);
@@ -136,9 +175,9 @@ function flip(card, value) {
 
                 //pointer la carte à modifier par l'id :
                 let div_carte = document.getElementById("card" + i);
-                if (div_carte.className !== "flipped"){
-                  // lui attribuer un attribut
-                  div_carte.setAttribute("onclick", "flip(this.id,this.value);");
+                if (div_carte.className !== "flipped") {
+                    // lui attribuer un attribut
+                    div_carte.setAttribute("onclick", "flip(this.id,this.value);");
                 }
 
             }
@@ -218,8 +257,8 @@ function cardsCreation() {
 
     //Génération des cartes dans la page HTML :
     for (i = 0; i < nb_cartes; i++) {
-        //Cible l'emplacement de jeu dans la page
-        var ctnr = document.querySelector(".container");
+        
+        
         //Création de la carte
         var newDiv = document.createElement("div");
         //Création des 2 faces de la carte
@@ -233,7 +272,9 @@ function cardsCreation() {
         newDiv.appendChild(fig2);
 
         //Ajout des visuels des cartes :
-        var source = "url(img/motif" + tab_init[i] + ".png)";
+
+        console.log(motif);
+        var source = "url(img/" + motif + tab_init[i] + ".png)";
         var source2 = "url(img/dos.png)";
         fig2.style.backgroundImage = source;
         fig.style.backgroundImage = source2;
@@ -243,7 +284,7 @@ function cardsCreation() {
         fig2.className = "back";
         newDiv.value = tab_init[i];
     }
-     empl_timer.innerHTML = "Temps restant :  -  min - s <br>Niveau : " + level;
+    empl_timer.innerHTML = "Temps restant :  -  min - s <br>Niveau : " + level;
     //Révélation des cartes en début de partie
     revel_card_init();
     //Retournement des cartes
@@ -254,6 +295,7 @@ function cardsCreation() {
         //Bouton "niveau suivant" dans "victoria"
         var cible = document.querySelector("input[name='nxt']");
         cible.addEventListener("click", function () {
+
             cpt_fin = 0;
             timer_gene = timer_gene + temps_manche;
             level++;
@@ -265,6 +307,7 @@ function cardsCreation() {
         //Bouton "recommencer" dans "victoria"
         var cible2 = document.querySelector("input[name='reset']");
         cible2.addEventListener("click", function () {
+            cpt = 0;
             tab_init = [];
             nb_cartes = 8;
             cpt_fin = 0;
@@ -278,6 +321,7 @@ function cardsCreation() {
         //Bouton "recommencer" dans "defeat"
         var cible3 = document.querySelector("input[name='reset2']");
         cible3.addEventListener("click", function () {
+            cpt = 0;
             tab_init = [];
             nb_cartes = 8;
             cpt_fin = 0;
@@ -292,6 +336,7 @@ function cardsCreation() {
         //Bouton "recommencer" dans "fin" de la partie
         var cible4 = document.querySelector("input[name='reset3']");
         cible4.addEventListener("click", function () {
+            cpt = 0;
             tab_init = [];
             nb_cartes = 8;
             cpt_fin = 0;
@@ -305,4 +350,4 @@ function cardsCreation() {
     });
 }
 //Lance la fonction suivante au chargement de la page.
-cardsCreation();
+
