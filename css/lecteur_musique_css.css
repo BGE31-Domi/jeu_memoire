@@ -1,8 +1,52 @@
 #lect_musique{
-  
-  width:250px;
-  height: 100px;
+
+  width:125px;
+
+  padding:3px;
   box-sizing: border-box;
   border:3px solid black;
   border-radius:10%;
 }
+
+label{
+  display:block;
+}
+
+img[alt="son_on_off"]{
+  margin:3px;
+  display:inline block;
+  width:40px;
+}
+img[alt="son_on_off"]:hover{
+  cursor:pointer;
+}
+
+.volume {
+  margin:3px;
+	vertical-align: bottom;
+	display: inline-block;
+	height: 25px;
+	white-space: nowrap;
+	position: relative;
+	width: 45px;
+}
+
+.volume a {
+	display: inline-block;
+	background: #ebebeb;
+	width: 10px;
+	vertical-align: bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	cursor: pointer;
+	border-left: 1px solid #fff;
+	position: absolute;
+	bottom: 0;
+}
+
+
+#stick1 { height: 5px;  left: 0px; background-color: navy;}
+#stick2 { height: 10px; left: 11px; background-color: navy;}
+#stick3 { height: 20px; left: 20px; background-color: navy;}
+#stick4 { height: 30px; left: 29px; }
+#stick5 { height: 40px; left: 38px; }
