@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>lecteur musique test</title>
+    <link rel="stylesheet" href="css\lecteur_musique_css.css">
+  </head>
+  <body>
+    <audio id=zen loop>
+        <source src="musiques/zen_test_secret_library_daguerreo.mp3" type="audio/mpeg" >
+    </audio>
+    <audio id=battle loop>
+        <source src="musiques/battle_test_eternal_harvest.mp3" type="audio/mpeg" >
+    </audio>
+
+    <form>
+      <label><input type="radio" name="chx_musique" value="zen" checked>Musique tranquille</label>
+      <label><input type="radio" name="chx_musique" value="battle">Musique dynamique</label>
+      <label><input type="radio" name="chx_musique" value="pas_musique">Pas de musique</label>
+      <label><input type="button" name="commencer" value="Commencer"></label>
+  </form>
+
+    <div id='lect_musique'>
+      <img src="img/son.png" alt="son_on_off">
+      <div class="volume">
+
+        <a id="stick1"></a>
+        <a id="stick2"></a>
+        <a id="stick3"></a>
+        <a id="stick4"></a>
+        <a id="stick5"></a>
+
+      </div>
+    </div>
+
+
+
+    <script src="js/musique_ambianceV2.js"></script>
+
+  </body>
+</html>
