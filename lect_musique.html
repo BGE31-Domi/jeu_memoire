@@ -6,16 +6,31 @@
     <link rel="stylesheet" href="css\lecteur_musique_css.css">
   </head>
   <body>
-    <audio>
-        <source src="musiques/zen_test_secret_library_daguerreo.mp3" type="audio/mpeg">
+    <audio id=zen loop>
+        <source src="musiques/zen_test_secret_library_daguerreo.mp3" type="audio/mpeg" >
     </audio>
 
+
+    <form>
+      <label><input type="checkbox" name="chx_musique" checked>Jouer la musique</label>
+      
+      <label><input type="button" name="commencer" value="Commencer"></label>
+  </form>
+
     <div id='lect_musique'>
-      <button type="button" name="play">Play</button>
-      <button type="button" name="stop">STOP</button>
-      <button type="button" name="monte_son">+</button>
-      <button type="button" name="baisse_son">-</button>
+      <img src="img/son.png" alt="son_on_off">
+      <div class="volume">
+
+        <a id="stick1"></a>
+        <a id="stick2"></a>
+        <a id="stick3"></a>
+        <a id="stick4"></a>
+        <a id="stick5"></a>
+
+      </div>
     </div>
+
+
 
     <script src="js/musique_ambiance.js"></script>
 
