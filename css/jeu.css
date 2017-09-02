@@ -1,13 +1,15 @@
 .container {
-    width: auto;
-
+    /*width: auto;*/
+    width:880px;
     float: left;
     display:flex;
+    padding:10px;
     flex-flow:wrap;
-    background-color: whitesmoke;
-    /*justify-content: space-between;*/
+    
+    background-color: #956999;
+    border:5px red solid;
     align-content:flex-start;
-    /*  position:absolute;*/
+   
 
 }
 .container div{
@@ -66,3 +68,7 @@ figure {
     display:none;
 }
 
+.pause{
+    position:relative;
+    display:none;
+}

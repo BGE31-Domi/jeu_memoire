@@ -1,47 +1,139 @@
 <!DOCTYPE html>
+
 <html>
     <head>
-        <title>Memo Graph Mode Solo</title>
+        <title>Memo Graph</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="solo.css" rel="stylesheet" type="text/css"/>
+        <meta name="css/viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/solo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/media.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jeu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/lecteur_musique_css.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <main>
 
+            <!--// <?php include("header.php"); ?>//-->
             <header>
-                <img class="logo" src="img/logoTab.jpg"  alt=""/>
-                <h1> Memo Graf</h1>
+                <img class="logo" src="img/logo4.png"  alt=""/>
+                <h1> Memo Graff'</h1>
                 <h2>Travailler sa mémoire visuelle </h2> 
-                <img class="logoSon" src="img/large.png" alt="">
-                <img class="logoConnex" src="img/pictouser.png" alt="">
-            </header>
-            <h2>Mode Solo</h2>
-            <div class="centre">
-            
-            <section class="container">               
-                <div class="carte">
-                    <div class="cart1"></div>
-                    <div class="cart2"></div>
-                    <div class="cart3"></div>
-                    <div class="cart4"></div>
-                    <div class="cart5"></div>
-                    <div class="cart6"></div>
-                    <div class="cart7"></div>
-                    <div class="cart8"></div>
-                </div>
-            </section>
-            <div class="solo">
+                <section class="menu">
 
-                <p >Caritate animadverti natos sensu deinde lumen nacti aliquod natura quae illa primum multo amantur mihi utilitatis etiam orta ea se.
-                    <br></p>
-                <a href="#">En savoir +</a><br>
-                <button onclick="debut();">Play</button>
-                                    <div class="scoreSolo">
-                                        <p>Best/New</p>
+                    <img src="img/son.png" alt="son_on_off">
+                    <div class="volume">
+                        <a id="stick1"></a>
+                        <a id="stick2"></a>
+                        <a id="stick3"></a>
+                        <a id="stick4"></a>
+                        <a id="stick5"></a>
+                    </div>
+
+                    <img class="logoConnex" src="img/pictouser.png" alt="">
+                </section>
+            </header>
+
+            <!--///////////////////////CENTRE////////////////////////////////////////////-->
+            <section class='centre'>
+
+                <div class="solo">
+                    <h3>Mode Solo</h3>
+                    <p >Caritate animadverti natos sensu deinde lumen nacti aliquod natura quae illa primum multo amantur mihi utilitatis etiam orta ea se.
+                        <br><a href="#">En savoir +</a></p>
+                    <form class="choix_niv">
+                        <label for="niveaux">Choississez le nombre de cartes : </label>
+                        <select class='choixCarte' name="niveaux">
+                            <option value="1" selected>8 cartes</option>
+                            <option value="2">10 cartes</option>
+                            <option value="3">12 cartes</option>
+                            <option value="4">14 cartes</option>
+                            <option value="5">16 cartes</option>
+                            <option value="6">18 cartes</option>
+                            <option value="7">20 cartes</option>
+                        </select> 
+                        <br/><br/>
+                        <label> Choississez le motif</label>
+                        <ul class='checkbox'>
+
+                            <li><input type="radio" name="variante" value="0" checked>Masque</li>
+                            <li><input type="radio" name="variante" value="1">Dauphin</li>
+                            <li><input type="radio" name="variante" value="2">Visage</li>
+                        </ul>
+                        <label><input type="checkbox" name="chx_musique" checked>Jouer la musique</label>
+                        <audio id=zen loop>
+                            <source src="musiques/zen_test_secret_library_daguerreo.mp3" type="audio/mpeg" >
+                        </audio>
+                        <input type="button" name="sub_chx_joueur" value="Commencer !" onclick="begin();">
+                    </form> 
+
+                    <div class="scoreTps">
+                        <h4>Votre score</h4>
+                        <div class="timer"></div>
+                        <div class="victoire">
+                            <p class="temps"></p>
+                            <form>
+                                <input type="button" name="nxt" value="Niveau suivant" onclick="next();">
+                                <input type="button" name="reset" value="Recommencer">
+                                <p class="score"></p>
+                            </form>
+                        </div>
+                        <div class="defeat">
+                            <p>Vous avez perdu : le temps est écoulé.</p>
+                            <form>
+                                <input type="button" name="reset2" value="Recommencer" onclick="recommencer();">
+                            </form>
+                        </div>
+                        <div class="pause">
+                            <p>Le jeu est en pause. Réappuyez sur ESPACE pour continuer.</p>
+                        </div>
+                        <div class="fin">
+                            <p class="temps"></p>
+                            <form>
+                                <p class="score"></p>
+                                <input type="button" name="score" value="Voir score">
+                                <input type="button" name="reset3" value="Recommencer" onclick="recommencer();">
+                            </form>
+                        </div>
+                    </div>               
+
+                </div>
+                <!--// <?php include("container.php"); ?>-->
+                <div class="container"></div>
+
+                <!--                <div class="duel">
+                                    <div class="timer"></div>
+                                    <div class="victoire">
+                                        <p class="temps"></p>
+                                        <form>
+                                            <input type="button" name="nxt" value="Niveau suivant" onclick="next();">
+                                            <input type="button" name="reset" value="Recommencer">
+                                            <p class="score"></p>
+                                        </form>
                                     </div>
-            </div>
-            </div>
+                                    <div class="defeat">
+                                        <p>Vous avez perdu : le temps est écoulé.</p>
+                                        <form>
+                                            <input type="button" name="reset2" value="Recommencer" onclick="recommencer();">
+                                        </form>
+                                    </div>
+                                    <div class="pause">
+                                        <p>Le jeu est en pause. Réappuyez sur ESPACE pour continuer.</p>
+                                    </div>
+                                    <div class="fin">
+                                        <p class="temps"></p>
+                                        <form>
+                                            <p class="score"></p>
+                                            <input type="button" name="score" value="Voir score">
+                                            <input type="button" name="reset3" value="Recommencer" onclick="recommencer();">
+                                        </form>
+                                    </div>
+                                </div>               -->
+                <audio id="card_flip_sound" preload="auto">
+                    <source  src="sons/card_flip.mp3" type="audio/mpeg"/>
+                </audio>
+            </section>
+
+            <!--// <?php include("footer.php"); ?>-->
             <footer>
                 <div class="partenaires">
 
@@ -58,5 +150,15 @@
             </footer>
 
         </main>
+        <audio preload="auto" id="son1">
+            <source src="sons/flap.mp3" type="audio/mpeg">
+
+        </audio>
+        <audio preload="auto" id="son2">
+            <source src="sons/flip.mp3" type="audio/mpeg">
+
+        </audio>
+        <script src="js/jeu-solo.js" type="text/javascript"></script>
+        <script src="js/musique_ambiance.js"></script>
     </body>
 </html>
