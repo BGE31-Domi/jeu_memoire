@@ -1,0 +1,71 @@
+body{
+  width:100%;
+  font-family: Verdana,sans-serif;
+  font-size:1.1em;
+  color:whitesmoke;
+
+}
+main{
+  margin-left:auto;
+  margin-right: auto;
+  width:80%;
+  background-color: #CB3401;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+}
+
+h1{
+  text-align: center;
+  font-variant: small-caps;
+}
+form{
+  padding:5%;
+}
+input{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  height:50px;
+  text-align: center;
+  font-size: 1em;
+}
+form input[type=button], div, ul li {
+  background-color: whitesmoke;
+  color:#0A256A;
+  cursor:pointer;
+  transition: 0.25s background-color;
+  border:3px #0A256A solid;
+  border-radius: 4px;
+  text-align: center;
+  list-style-type: none;
+  font-size:1em;
+
+
+}
+ul li{
+  display:inline-block;
+  padding: 10px;
+  color:#0A256A;
+  height:100%;
+
+}
+div{
+  margin-left: auto;
+  margin-right: auto;
+}
+div a, ul li a{
+  text-decoration: none;
+  color:#0A256A;
+  display:inline-block;;
+
+}
+form input[type=button]:hover, div:hover, div a:hover, ul li:hover, ul li a:hover{
+  background-color: #0A256A;
+
+  color:whitesmoke;
+}
+form input[type=file] {
+  display:none;
+}
