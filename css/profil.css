@@ -1,0 +1,85 @@
+body {
+  font-family: arial;
+}
+
+h3 {
+  text-align: center;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  padding:10px;
+  background-color: rgb(240,240,248);
+  width:60%;
+  
+}
+form input, form div {
+  display:inline-block;
+  
+  height:30px;
+  width:70%;
+  padding:0 5px;
+}
+form div label {
+  display: inline-block;
+}
+
+form div input[type=radio] {
+  display: inline-block;
+  width:20px;
+  margin:5px;
+}
+form input[type=button], .bouton {
+  background-color: rgb(140,140,150);
+  color:white;
+  cursor:pointer;
+  transition: 0.25s background-color;
+  border:0;
+  border-radius: 4px;
+}
+form input[type=button]:hover {
+  background-color: rgb(150,150,180);
+}
+form input[type=file] {
+  display:none;
+}
+
+
+td{
+    width:30%;
+}
+
+.mdp,.mdp2,.mdp3{
+    display:none;
+  
+}
+#profil{
+    width:100%;
+}
+.eye{
+    width:10%;
+}
+
+ul li{
+  display:inline-block;
+  padding: 10px;
+  color:#0A256A;
+  height:100%;
+
+}
+div{
+  margin-left: auto;
+  margin-right: auto;
+}
+div a, ul li a{
+  text-decoration: none;
+  color:#0A256A;
+  display:inline-block;;
+
+}
+form input[type=button]:hover, div:hover, div a:hover, ul li:hover, ul li a:hover{
+  background-color: #0A256A;
+
+  color:whitesmoke;
+}
