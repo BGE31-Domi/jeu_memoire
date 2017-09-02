@@ -6,7 +6,7 @@
  - Dominique
  - Zohal
  - Tabitha
- 
+
  créé en août 2017.
  */
 
@@ -46,15 +46,15 @@ var fin = document.querySelector(".fin");
 var motif = "";
 //Emplacement du timer :
 var empl_timer = document.querySelector('.timer');
-//Récupère la valeur du bouton radio de la variante de jeu : 
+//Récupère la valeur du bouton radio de la variante de jeu :
 var game;
-//Cible la div qui contient toutes les cartes : 
+//Cible la div qui contient toutes les cartes :
 var ctnr = document.querySelector(".container");
 //Récupère la valeur de la liste déroulante de numéro du niveau.
 var chx_niv;
 //Tableau des nombres de cartes selon les niveaux :
 var tab_niv = [8, 10, 12, 14, 16, 18, 20];
-//Cible le formulaire du choix de niveau : 
+//Cible le formulaire du choix de niveau :
 var form_choice = document.querySelector(".choix_niv");
 //Cible la div pause
 var pause = document.querySelector(".pause");
@@ -120,7 +120,7 @@ function game_variant(x) {
 
 }
 
-//Crée les cartes au début de chaque niveau ou partie. 
+//Crée les cartes au début de chaque niveau ou partie.
 function cardsCreation() {
 //    Mets une bordure ruge pour indiquer au joueur que le jeu n'a pas commncé.'
     ctnr.style.borderColor = "#D50105";
@@ -235,6 +235,10 @@ function game_time() {
             // lui enlever l'attribut onclick :
             div_carte.removeAttribute("onclick");
         }
+        //arret de la musique :
+        musique_zen.pause();
+        musique_zen.currentTime=0;
+
 
         popup_timeout();
 
@@ -349,7 +353,7 @@ function flip2() {
 
 }
 
-//Affiche la div qd le temps de jeu est écoulé : 
+//Affiche la div qd le temps de jeu est écoulé :
 function popup_timeout() {
     clearInterval(timer_id);
     play=false;
@@ -413,6 +417,9 @@ function recommencer() {
 function reprendre() {
     pause_bool = false;
 
+    //Musique - reprise :
+    musique_zen.play();
+
 
     pause.style.display = "none";
 //        Boucle qui régénère les cartes telles qu'étaient à la fin du tour précédent.'
@@ -457,6 +464,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 pause.style.display = "inline-block";
 
+                //Musique en pause :
+                musique_zen.pause();
+
             } else {
                 if (pause_bool === true) {
                     reprendre();
@@ -467,11 +477,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 });
-
-
-
-
-
-
-
-

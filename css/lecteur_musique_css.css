@@ -1,11 +1,10 @@
 #lect_musique{
-
+ display: inline-block;
   width:125px;
-
   padding:3px;
   box-sizing: border-box;
-  border:3px solid black;
-  border-radius:10%;
+/*  border:3px solid black;
+  border-radius:10%;*/
 }
 
 label{
@@ -13,19 +12,20 @@ label{
 }
 
 img[alt="son_on_off"]{
-  margin:3px;
-  display:inline block;
+/*  margin:3px;*/
+  display: inline-block;
   width:40px;
+  height: 40px;
 }
 img[alt="son_on_off"]:hover{
   cursor:pointer;
 }
 
 .volume {
-  margin:3px;
+margin: 3px;
 	vertical-align: bottom;
 	display: inline-block;
-	height: 25px;
+	height: 35px;
 	white-space: nowrap;
 	position: relative;
 	width: 45px;
@@ -45,8 +45,8 @@ img[alt="son_on_off"]:hover{
 }
 
 
-#stick1 { height: 5px;  left: 0px; background-color: navy;}
-#stick2 { height: 10px; left: 11px; background-color: navy;}
-#stick3 { height: 20px; left: 20px; background-color: navy;}
-#stick4 { height: 30px; left: 29px; }
-#stick5 { height: 40px; left: 38px; }
+#stick1 { height: 5px;  left: 0px; background-color: greenyellow;}
+#stick2 { height: 10px; left: 11px; background-color: greenyellow;}
+#stick3 { height: 20px; left: 20px; background-color: greenyellow;}
+#stick4 { height: 30px; left: 29px; background-color: #999999;}
+#stick5 { height: 40px; left: 38px; background-color: #999999;}

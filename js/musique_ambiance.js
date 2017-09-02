@@ -1,7 +1,9 @@
 //on cible le bouton 'commencer'
-var commencer=document.querySelector('input[name="commencer"]');
+var commencer=document.querySelector('input[name="sub_chx_joueur"]');
+
 //on cible le lecteur de musique :
 var musique_zen = document.getElementById('zen');
+
 
 //on cible l'icone son
 var son_on_off = document.querySelector('img[alt="son_on_off"]');
@@ -23,11 +25,11 @@ var stick5=document.getElementById('stick5');
 
 //CSS des sticks du volume de son pour volume = 0.5.
 function stick3_css(){
-  stick1.style.backgroundColor="navy";
-  stick2.style.backgroundColor="navy";
-  stick3.style.backgroundColor="navy";
-  stick4.style.backgroundColor="#ebebeb";
-  stick5.style.backgroundColor="#ebebeb";
+  stick1.style.backgroundColor="greenyellow";
+  stick2.style.backgroundColor="greenyellow";
+  stick3.style.backgroundColor="greenyellow";
+  stick4.style.backgroundColor="#999999";
+  stick5.style.backgroundColor="#999999";
 }
 
 
@@ -35,7 +37,7 @@ function stick3_css(){
 
 //Lancer la musique quand on appuie sur le bouton commencer :
 commencer.addEventListener('click', function(){
-  console.log('pop');
+  // console.log('pop');
   //On récupére l'etat checked ou non des boutons radio :
   checked_musique_zen=document.querySelector('input[name="chx_musique"]').checked;
 
@@ -63,20 +65,20 @@ son_on_off.addEventListener('click', function(){
 
 //modifier les couleurs des sticks suivant le niveau de son sélectionné :
 stick1.addEventListener('click', function(){
-  stick1.style.backgroundColor="navy";
-  stick2.style.backgroundColor="#ebebeb";
-  stick3.style.backgroundColor="#ebebeb";
-  stick4.style.backgroundColor="#ebebeb";
-  stick5.style.backgroundColor="#ebebeb";
+  stick1.style.backgroundColor="greenyellow";
+  stick2.style.backgroundColor="#999999";
+  stick3.style.backgroundColor="#999999";
+  stick4.style.backgroundColor="#999999";
+  stick5.style.backgroundColor="#999999";
   musique_zen.volume=0.1;
 
 });
 stick2.addEventListener('click', function(){
-  stick1.style.backgroundColor="navy";
-  stick2.style.backgroundColor="navy";
-  stick3.style.backgroundColor="#ebebeb";
-  stick4.style.backgroundColor="#ebebeb";
-  stick5.style.backgroundColor="#ebebeb";
+  stick1.style.backgroundColor="greenyellow";
+  stick2.style.backgroundColor="greenyellow";
+  stick3.style.backgroundColor="#999999";
+  stick4.style.backgroundColor="#999999";
+  stick5.style.backgroundColor="#999999";
   musique_zen.volume=0.3;
 
 });
@@ -86,20 +88,20 @@ stick3.addEventListener('click', function(){
 
 });
 stick4.addEventListener('click', function(){
-  stick1.style.backgroundColor="navy";
-  stick2.style.backgroundColor="navy";
-  stick3.style.backgroundColor="navy";
-  stick4.style.backgroundColor="navy";
-  stick5.style.backgroundColor="#ebebeb";
+  stick1.style.backgroundColor="greenyellow";
+  stick2.style.backgroundColor="greenyellow";
+  stick3.style.backgroundColor="greenyellow";
+  stick4.style.backgroundColor="greenyellow";
+  stick5.style.backgroundColor="#999999";
   musique_zen.volume=0.7;
 
 });
 stick5.addEventListener('click', function(){
-  stick1.style.backgroundColor="navy";
-  stick2.style.backgroundColor="navy";
-  stick3.style.backgroundColor="navy";
-  stick4.style.backgroundColor="navy";
-  stick5.style.backgroundColor="navy";
+  stick1.style.backgroundColor="greenyellow";
+  stick2.style.backgroundColor="greenyellow";
+  stick3.style.backgroundColor="greenyellow";
+  stick4.style.backgroundColor="greenyellow";
+  stick5.style.backgroundColor="greenyellow";
   musique_zen.volume=1;
 
 });
