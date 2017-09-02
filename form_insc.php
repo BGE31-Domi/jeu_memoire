@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/insc.css">
+        <link rel="stylesheet" href="css/liens_retour_css.css">
         <script src="js/insc.js"charset="utf-8"></script>
         <title>Formulaire d'inscription</title>
 
@@ -23,10 +24,11 @@
                 <input type='button' value='Confirmation'>
                 <label id="error"></label>
             </form>
+
+            <a href="solo.html">Retour à l'acceuil (mène à la page solo pour l'instant)</a>
         </main>
 
 
     </body>
 
 </html>
-
