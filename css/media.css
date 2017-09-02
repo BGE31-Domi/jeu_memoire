@@ -1,0 +1,93 @@
+
+
+
+@media screen and (min-width: 200px) and (max-width:640px){
+    html{
+        font-size: 45%;
+        letter-spacing: 1px;
+    }
+
+    .logo {        
+        width:80px;     
+    } 
+    .lect_musique{
+        width: 10px;
+    } 
+    .logoConnex{
+        width: 50px;
+        height: 50px;
+    } 
+    .bge{
+        width: 60px;
+    } 
+    .iot{
+        width: 60px;
+    } 
+    .region{
+        width: 40px;
+    }
+    .centre{
+            flex-flow:  wrap;
+    }
+    .solo{width: 100%}
+}
+
+   
+/*///////////////////640px -> 1240px/////////////////////////////////////*/
+@media screen and (min-width: 640px) and (max-width: 1700px) {
+
+    html{
+        font-size: 55%;
+    }
+
+    .logo { 
+        width:120px;     
+    }  
+    .lect_musique{
+        width: 50px;
+    }
+    .logoConnex{
+        width: 50px;
+        height: 50px;
+    }
+
+    .bge{
+        width: 70px;
+    } 
+    .iot{
+        width: 70px;
+    } 
+    .region{
+        width: 40px;
+    } 
+    .centre{
+            flex-flow:  wrap;
+    }
+    .solo{width: 100%}
+
+}
+/*}////////////////////1240px -> 2000px///////////////////////////////////////*/
+@media screen and (min-width: 1700px) and (max-width:2000px){
+    html{
+        font-size: 65%;
+    }
+    header{
+        margin: 0px;
+    }
+    .logo{
+        width: 160px;
+    }
+    .bge{
+        width: 90px;
+    }
+    .iot{
+        width:90px;
+    }
+    .region{
+        width: 60px;
+    }
+    .solo{
+flex-direction: column;
+}
+
+}

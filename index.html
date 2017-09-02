@@ -5,8 +5,8 @@
         <title>Memo Graph</title>
         <meta charset="UTF-8">
         <meta name="css/viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/fontPage.css" rel="stylesheet" type="text/css"/>
 
+       
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
         <link href="css/jeu.css" rel="stylesheet" type="text/css"/>
         
@@ -31,7 +31,25 @@
                     <h3>Mode Solo</h3>
                     <p >Caritate animadverti natos sensu deinde lumen nacti aliquod natura quae illa primum multo amantur mihi utilitatis etiam orta ea se.
                         <br><a href="#">En savoir +</a></p>
-                    <button onclick="debut();">Play</button>
+                    
+                   <form class="choix_niv">
+                        <label for="niveaux">Choississez le niveau : </label>
+                        <select name="niveaux">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+
+                        <input type="radio" name="variante" value="0" checked>Polychromie
+                        <input type="radio" name="variante" value="1">Champignons
+
+                        <input type="button" name="sub_chx_joueur" value="Commencer !">
+
+                    </form> 
                     <div class="scoreSolo">
                         Best/New
                     </div>
@@ -54,24 +72,7 @@
 
                 <div class="duel">
                     <div class="timer"></div>
-                    <form class="choix_niv">
-                        <label for="niveaux">Choississez le niveau : </label>
-                        <select name="niveaux">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                        </select>
-
-                        <input type="radio" name="variante" value="0" checked>Polychromie
-                        <input type="radio" name="variante" value="1">Champignons
-
-                        <input type="button" name="sub_chx_joueur" value="Commencer !">
-
-                    </form> 
+                    
                     <div class="victoire">
 
                         <p class="temps"></p>
@@ -131,6 +132,6 @@
             </footer>
 
         </main>
-        <script src="js/jeu2.js" type="text/javascript"></script>
+        <script src="js/jeu.js" type="text/javascript"></script>
     </body>
 </html>
