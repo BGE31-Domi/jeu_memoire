@@ -1,0 +1,40 @@
+form  {
+  background-color:lightskyblue;
+  margin: 0 auto;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 1em;
+}
+
+input {
+  width: 100%;
+  /*display:flex;*/
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+input[type=button] {
+  background-color: rgb(140,190,210);
+  border: 1px solid grey;
+  box-shadow:  0 0 12px rgba(0,0,0,0.75);
+  border-radius:6px;
+  transition: 0.25s;
+}
+input[type=button]:hover {
+  background-color: rgb(180,230,250);
+}
+h1{
+  text-align: center;
+  background-color: white;
+}
+
+
+button{
+  padding-left: 90px;
+  margin-left: 1.5em;
+}
+form div+div{
+  margin-top: 1em;
+
+}
