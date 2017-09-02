@@ -6,10 +6,18 @@
         <meta charset="UTF-8">
         <meta name="css/viewport" content="width=device-width, initial-scale=1.0">
 
-       
+
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
+
+        <link href="css/solo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/media.css" rel="stylesheet" type="text/css"/>
         <link href="css/jeu.css" rel="stylesheet" type="text/css"/>
-        
+
+
+        <link href="css/media.css" rel="stylesheet" type="text/css"/>
+        <link href="css/lecteur_musique_css.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/img_env_css.css">
+
     </head>
     <body>
         <main>
@@ -18,9 +26,21 @@
             <header>
                 <img class="logo" src="img/logoTab.jpg"  alt=""/>
                 <h1> Memo Graf</h1>
-                <h2>Travailler sa mémoire visuelle </h2> 
-                <img class="logoSon" src="img/large.png" alt="">
-                <img class="logoConnex" src="img/pictouser.png" alt="">
+                <h2>Travailler sa mémoire visuelle </h2>
+                <section class="menu">
+
+                    <img src="img/son.png" alt="son_on_off">
+                    <div class="volume">
+                        <a id="stick1"></a>
+                        <a id="stick2"></a>
+                        <a id="stick3"></a>
+                        <a id="stick4"></a>
+                        <a id="stick5"></a>
+                    </div>
+
+                    <a href="connex.php"><img class="logoConnex" src="img/pictouser.png" alt=""></a>
+                    <a href="contactV2.php"><img src="img/enveloppe.svg" alt="contactez-nous"></a>
+                </section>
 
             </header>
 
@@ -31,7 +51,7 @@
                     <h3>Mode Solo</h3>
                     <p >Caritate animadverti natos sensu deinde lumen nacti aliquod natura quae illa primum multo amantur mihi utilitatis etiam orta ea se.
                         <br><a href="#">En savoir +</a></p>
-                    
+
                    <form class="choix_niv">
                         <label for="niveaux">Choississez le niveau : </label>
                         <select name="niveaux">
@@ -49,7 +69,7 @@
 
                         <input type="button" name="sub_chx_joueur" value="Commencer !">
 
-                    </form> 
+                    </form>
                     <div class="scoreSolo">
                         Best/New
                     </div>
@@ -72,7 +92,7 @@
 
                 <div class="duel">
                     <div class="timer"></div>
-                    
+
                     <div class="victoire">
 
                         <p class="temps"></p>
@@ -121,11 +141,11 @@
 
                     <img class="bge" src="img/logo-BGE.png" alt="">
                     <img class="iot" src="img/logo_iotvalley.png" alt=""/>
-                    <img class="region" src="img/téléchargement.png" alt=""/>  
+                    <img class="region" src="img/téléchargement.png" alt=""/>
                 </div>
 
                 <div class="foot">
-                    <a href="#">CGU</a> 
+                    <a href="#">CGU</a>
                     <a href="#">Présentation</a>
                     <a href="#">Contactez-nous !</a>
                 </div>
